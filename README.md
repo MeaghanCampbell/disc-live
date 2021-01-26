@@ -1,4 +1,4 @@
-# Project One
+# PLAYlist
 
 
 ## 💬Description
@@ -22,7 +22,8 @@ A website for users to create and discover playlists from various streaming plat
 
 
 ## 🎨Mock-Up
-![](mock-up.png)
+![](mockup-1.png)
+<br>![](mockup-2.png)</br>
 
 
 ## :pencil2:Built With
@@ -41,7 +42,7 @@ The user should clone the repository from GitHub and open up the project in the 
 
 
 ## 💻Website
-Please view deployed application at [Project One](https://tpgent01.github.io/weather-dashboard/).
+Please view deployed application at [PLAYlist](https://tpgent01.github.io/weather-dashboard/).
 
 <br>![](website.gif)</br>
 
