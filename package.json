@@ -1,0 +1,23 @@
+{
+  "name": "project-one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build:css": "tailwind build src/style.css -o dist/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeaghanCampbell/project-one.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeaghanCampbell/project-one/issues"
+  },
+  "homepage": "https://github.com/MeaghanCampbell/project-one#readme",
+  "dependencies": {
+    "tailwindcss": "^2.0.2"
+  }
+}
