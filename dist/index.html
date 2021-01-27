@@ -31,8 +31,8 @@
 
                 <!-- Search Input -->
                 <div>
-                    <input class="form-control shadow appearance-none border rounded py-2 px-4 text-grey-darker" id="enter-music" type="text" placeholder="search by genre" arial-label="search by genre">
-                    <button class="bg-gray-300 hover:bg-gray-100 text-red-500 font-bold py-2 px-4 border-blue-dark hover:border-blue rounded" type="button" id="search-btn">
+                    <input class="form-control shadow appearance-none border rounded py-2 px-4 text-grey-darker focus:outline-none focus:ring focus:border-blue-300" id="enter-music" type="text" placeholder="search by genre" arial-label="search by genre">
+                    <button class="bg-gray-300 hover:bg-gray-100 text-red-500 font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-blue-300" type="button" id="search-btn">
                         Search
                     </button>
                 </div>
@@ -42,22 +42,23 @@
         <!-- Song List Display -->
         <section id="song-display">
             <div class="container mb-2 flex mx-auto w-full items-center justify-center">
-                <ul class="flex flex-col p-6">
-                    <li class="bg-gray-200 flex flex-row rounded-2xl">
-                        <div class="select-none flex flex-1 items-center p-1 rounded-2xl border-2 border-red-500">
-                            <div class="flex-1 pl-3 mr-16">
-                                <div class="font-medium ">
-                                    Song Title by Artist Name
-                                </div>
-                            </div>
-                            <button class="w-auto text-center flex text-white text-bold rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2">
-                                Learn To Play
-                            </button>
-                            <button class="w-1/8 text-center flex text-white rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2">
-                                <i class="far fa-trash-alt"></i>
-                            </button>
+                <ul class="flex flex-col p-6 w-10/12">
+
+                    <li class="bg-gray-200 flex flex-row flex-auto select-none items-center p-1 border-2 rounded-2xl border-red-500">
+                        <button class="text-center text-black pl-2 pr-4 focus:outline-none focus:ring focus:border-blue-300">
+                            <i class="fas fa-play-circle fa-2x"></i>
+                        </button>
+                        <div class="flex-auto pl-3 mr-16 font-medium">
+                            Song Title by Artist Name
                         </div>
+                        <button class="w-auto text-center flex text-white text-bold rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
+                            Learn To Play
+                        </button>
+                        <button class="w-1/8 text-center flex text-white rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
                     </li>
+
                 </ul>
             </div>
         </section>
