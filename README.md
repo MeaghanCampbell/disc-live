@@ -16,6 +16,11 @@ A website for users to create and discover playlists from various streaming plat
 
 
 ## ⚡Purpose 
+* AS A musician
+* I WANT to find songs that I want to learn
+* SO THAT I can teach myself how to play them in an efficient manner
+<br></br>
+<br></br>
 * GIVEN ...
 * WHEN I ...
 * THEN I ...
@@ -30,9 +35,8 @@ A website for users to create and discover playlists from various streaming plat
 * HTML
 * CSS
 * Javascript
-* Bootstrap
+* Tailwind
 * JQuery
-* Moment.js
 * Google Fonts
 * Font Awesome
 
