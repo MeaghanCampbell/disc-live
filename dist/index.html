@@ -12,14 +12,20 @@
 
     <body class="bg-black">
         <header class="w-full bg-cover bg-center" style="height:32rem; background-image: url('./crowd.jpg');">
-            <div class="flex items-center justify-center h-full w-full">
-                <div class="text-center align-top">
+            <div class="box-border p-16 items-center content-between text-center flex flex-wrap justify-center h-full w-full">
+                <div>
                     <h1 class="text-red-500 text-7xl font-semibold">PLAYlist</h1>
+                </div>
+
+                <div class="px-44">
                     <p class="text-white text-4xl">
                         Create and discover playlists from various
                         streaming platforms and learn to play
                         like your favorite artists!
                     </p>
+                </div>
+
+                <div>
                     <input class="form-control shadow appearance-none border rounded py-2 px-4 text-grey-darker" id="enter-music" type="text" placeholder="search by genre" arial-label="search by genre">
                     <button class="bg-gray-300 hover:bg-gray-100 text-red-500 font-bold py-2 px-4 border-blue-dark hover:border-blue rounded" type="button" id="search-btn">
                         Search
@@ -29,7 +35,7 @@
         </header>
 
         <section id="song-display">
-            <div class="flex-row">
+            <div class="flex flex-row">
 
             </div>
         </section>
@@ -39,7 +45,9 @@
     </body>
 
     <footer class="bg-gray-100 h-20 fixed bottom-0 w-full">
-        <p class="font-sans text-gray-500 text-center">Created by Meaghan Campbell, Daniel Starkey & Taylor Gentry.</p>
+        <div class="box-border p-6">
+            <p class="font-sans text-gray-500 text-center">Created by Meaghan Campbell, Daniel Starkey & Taylor Gentry.</p>
+        </div>
     </footer>
     
 </html>
