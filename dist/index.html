@@ -11,12 +11,16 @@
     </head>
 
     <body class="bg-black">
+        <!-- Header Img -->
         <header class="w-full bg-cover bg-center" style="height:32rem; background-image: url('./crowd.jpg');">
+            <!-- Header Info Box -->
             <div class="box-border p-16 items-center content-between text-center flex flex-wrap justify-center h-full w-full">
+                <!-- Website Name -->
                 <div>
                     <h1 class="text-red-500 text-7xl font-semibold">PLAYlist</h1>
                 </div>
 
+                <!-- Website Description -->
                 <div class="px-44">
                     <p class="text-white text-4xl">
                         Create and discover playlists from various
@@ -25,6 +29,7 @@
                     </p>
                 </div>
 
+                <!-- Search Input -->
                 <div>
                     <input class="form-control shadow appearance-none border rounded py-2 px-4 text-grey-darker" id="enter-music" type="text" placeholder="search by genre" arial-label="search by genre">
                     <button class="bg-gray-300 hover:bg-gray-100 text-red-500 font-bold py-2 px-4 border-blue-dark hover:border-blue rounded" type="button" id="search-btn">
@@ -34,16 +39,31 @@
             </div>
         </header>
 
+        <!-- Song List Display -->
         <section id="song-display">
-            <div class="flex flex-row">
-
+            <div class="container mb-2 flex mx-auto w-full items-center justify-center">
+                <ul class="flex flex-col p-6">
+                    <li class="bg-gray-200 flex flex-row rounded-2xl">
+                        <div class="select-none flex flex-1 items-center p-1 rounded-2xl border-2 border-red-500">
+                            <div class="flex-1 pl-3 mr-16">
+                                <div class="font-medium ">
+                                    Song Title by Artist Name
+                                </div>
+                            </div>
+                            <button class="w-auto text-center flex text-white text-bold rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2">
+                                Learn To Play
+                            </button>
+                            <button class="w-1/8 text-center flex text-white rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </section>
-
-
-
     </body>
 
+    <!-- Footer -->
     <footer class="bg-gray-100 h-20 fixed bottom-0 w-full">
         <div class="box-border p-6">
             <p class="font-sans text-gray-500 text-center">Created by Meaghan Campbell, Daniel Starkey & Taylor Gentry.</p>
