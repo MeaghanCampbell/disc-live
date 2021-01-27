@@ -5,31 +5,25 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="..." />
+        <link rel="stylesheet" href="./style.css" />
         <title>PLAYlist</title>
     </head>
 
-    <body>
-        <header class="text-center" style="background-image: url('./crowd.jpg');">
-            <h1 class="display-1 text-danger">PLAYlist</h1>
-            <p class="lead text-light">
-                Create and discover playlists from various
-                streaming platforms and learn to play
-                like your favorite artists!
-            </p>
-            
-            <div class="container">
-                <div class="input mb-3">
-                    <input id="enter-music" type="text" class="form-control" placeholder="search by genre" arial-label="search by genre">
-                    <div class="input-group-append">
-                        <button class="btn  btn-primary" type="button" id="search-btn">
-                            <span style="color: ...">
-                                <i class="fas fa-search"></i>
-                            </span>
-                        </button>
-                    </div>
+    <body class="bg-black">
+        <header class="w-full bg-cover bg-center" style="height:32rem; background-image: url('./crowd.jpg');">
+            <div class="flex items-center justify-center h-full w-full">
+                <div class="text-center align-top">
+                    <h1 class="text-red-500 text-7xl font-semibold">PLAYlist</h1>
+                    <p class="text-white text-4xl">
+                        Create and discover playlists from various
+                        streaming platforms and learn to play
+                        like your favorite artists!
+                    </p>
+                    <input class="form-control shadow appearance-none border rounded py-2 px-4 text-grey-darker" id="enter-music" type="text" placeholder="search by genre" arial-label="search by genre">
+                    <button class="bg-gray-300 hover:bg-gray-100 text-red-500 font-bold py-2 px-4 border-blue-dark hover:border-blue rounded" type="button" id="search-btn">
+                        Search
+                    </button>
                 </div>
             </div>
         </header>
@@ -44,12 +38,8 @@
 
     </body>
 
-    <footer>
-        <div class="bg-light py-4">
-          <div class="container text-center">
-            <p class="text-muted mb-0 py-2">Created by Meaghan Campbell, Daniel Starkey & Taylor Gentry.</p>
-          </div>
-        </div>
-      </footer>
+    <footer class="bg-gray-100 h-20 fixed bottom-0 w-full">
+        <p class="font-sans text-gray-500 text-center">Created by Meaghan Campbell, Daniel Starkey & Taylor Gentry.</p>
+    </footer>
     
-    </html>
+</html>
