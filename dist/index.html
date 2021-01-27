@@ -1,74 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="./style.css" />
-        <title>PLAYlist</title>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css" />
+    <title>PLAYlist</title>
+</head>
 
-    <body class="bg-black">
-        <!-- Header Img -->
-        <header class="w-full bg-cover bg-center" style="height:32rem; background-image: url('./crowd.jpg');">
-            <!-- Header Info Box -->
-            <div class="box-border p-16 items-center content-between text-center flex flex-wrap justify-center h-full w-full">
-                <!-- Website Name -->
-                <div>
-                    <h1 class="text-red-500 text-7xl font-semibold">PLAYlist</h1>
-                </div>
+<body class="bg-black overflow-scroll">
+    <!-- Header Img -->
+    <header id="headerImg" class="w-full bg-cover bg-center" style="height:32rem; background-image: url('./crowd.jpg');">
+        <!-- Header Info Box -->
+        <div class="box-border p-16 items-center content-between text-center flex flex-wrap justify-center h-full w-full">
+            <!-- Website Name -->
+            <h1 class="text-red-500 text-7xl font-semibold">PLAYlist</h1>
 
-                <!-- Website Description -->
-                <div class="px-44">
-                    <p class="text-white text-4xl">
-                        Create and discover playlists from various
-                        streaming platforms and learn to play
-                        like your favorite artists!
-                    </p>
-                </div>
-
-                <!-- Search Input -->
-                <div>
-                    <input class="form-control shadow appearance-none border rounded py-2 px-4 text-grey-darker focus:outline-none focus:ring focus:border-blue-300" id="enter-music" type="text" placeholder="search by genre" arial-label="search by genre">
-                    <button class="bg-gray-300 hover:bg-gray-100 text-red-500 font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-blue-300" type="button" id="search-btn">
-                        Search
-                    </button>
-                </div>
+            <!-- Website Description -->
+            <div id="aboutText" class="px-44">
+                <p class="text-white text-4xl">
+                    Create and discover playlists from various
+                    streaming platforms and learn to play
+                    like your favorite artists!
+                </p>
             </div>
-        </header>
 
-        <!-- Song List Display -->
-        <section id="song-display">
-            <div class="container mb-2 flex mx-auto w-full items-center justify-center">
-                <ul class="flex flex-col p-6 w-10/12">
-
-                    <li class="bg-gray-200 flex flex-row flex-auto select-none items-center p-1 border-2 rounded-2xl border-red-500">
-                        <button class="text-center text-black pl-2 pr-4 focus:outline-none focus:ring focus:border-blue-300">
-                            <i class="fas fa-play-circle fa-2x"></i>
-                        </button>
-                        <div class="flex-auto pl-3 mr-16 font-medium">
-                            Song Title by Artist Name
-                        </div>
-                        <button class="w-auto text-center flex text-white text-bold rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
-                            Learn To Play
-                        </button>
-                        <button class="w-1/8 text-center flex text-white rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
-                            <i class="far fa-trash-alt"></i>
-                        </button>
-                    </li>
-
-                </ul>
+            <!-- Search Input -->
+            <div id="searchBar">
+                <input class="form-control shadow appearance-none border rounded py-2 px-4 text-grey-darker focus:outline-none focus:ring focus:border-blue-300" id="enter-music" type="text" placeholder="search by genre" arial-label="search by genre">                    <button class="bg-gray-300 hover:bg-gray-100 text-red-500 font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-blue-300" type="button" id="search-btn">
+                    Search
+                </button>
             </div>
-        </section>
-    </body>
-
-    <!-- Footer -->
-    <footer class="bg-gray-100 h-20 fixed bottom-0 w-full">
-        <div class="box-border p-6">
-            <p class="font-sans text-gray-500 text-center">Created by Meaghan Campbell, Daniel Starkey & Taylor Gentry.</p>
         </div>
-    </footer>
+    </header>
+
+    <!-- Song List Display -->
+    <section id="songDisplay">
+        <div class="container mb-2 flex mx-auto w-full items-center justify-center">
+            <ul class="flex flex-col p-6 w-10/12">
+                <!-- Song 1 -->
+                <li id="songChoice" class="bg-gray-200 flex flex-row flex-auto select-none items-center p-1 border-2 rounded-2xl border-red-500">
+                    <button class="text-center text-black pl-2 pr-4 focus:outline-none focus:ring focus:border-blue-300">
+                        <i class="fas fa-play-circle fa-2x"></i>
+                    </button>
+                    <div class="flex-auto pl-3 mr-16 font-medium">
+                        Song Title by Artist Name
+                    </div>
+                    <button class="w-auto text-center flex text-white text-bold rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
+                        Learn To Play
+                    </button>
+                    <button class="w-1/8 text-center flex text-white rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </li>
+
+                <!-- Song 2 -->
+                <li id="songChoice" class="bg-gray-200 flex flex-row flex-auto select-none items-center p-1 border-2 rounded-2xl border-red-500">
+                    <button class="text-center text-black pl-2 pr-4 focus:outline-none focus:ring focus:border-blue-300">
+                        <i class="fas fa-play-circle fa-2x"></i>
+                    </button>
+                    <div class="flex-auto pl-3 mr-16 font-medium">
+                        Song Title by Artist Name
+                    </div>
+                    <button class="w-auto text-center flex text-white text-bold rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
+                        Learn To Play
+                    </button>
+                    <button class="w-1/8 text-center flex text-white rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </li>
+
+                <!-- Song 3 -->
+                <li id="songChoice" class="bg-gray-200 flex flex-row flex-auto select-none items-center p-1 border-2 rounded-2xl border-red-500">
+                    <button class="text-center text-black pl-2 pr-4 focus:outline-none focus:ring focus:border-blue-300">
+                        <i class="fas fa-play-circle fa-2x"></i>
+                    </button>
+                    <div class="flex-auto pl-3 mr-16 font-medium">
+                        Song Title by Artist Name
+                    </div>
+                    <button class="w-auto text-center flex text-white text-bold rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
+                        Learn To Play
+                    </button>
+                    <button class="w-1/8 text-center flex text-white rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">                            <i class="far fa-trash-alt"></i>
+                    </button>
+                </li>
+
+                <!-- Song 4 -->
+                <li id="songChoice" class="bg-gray-200 flex flex-row flex-auto select-none items-center p-1 border-2 rounded-2xl border-red-500">
+                    <button class="text-center text-black pl-2 pr-4 focus:outline-none focus:ring focus:border-blue-300">
+                        <i class="fas fa-play-circle fa-2x"></i>
+                    </button>
+                    <div class="flex-auto pl-3 mr-16 font-medium">
+                        Song Title by Artist Name
+                    </div>
+                    <button class="w-auto text-center flex text-white text-bold rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
+                        Learn To Play
+                    </button>
+                    <button class="w-1/8 text-center flex text-white rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
+                        <i class="far fa-trash-alt"></i>                        
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+
+<!-- Footer -->
+<footer id="footer" class="bg-gray-100 h-20 bottom-0 w-full">
+    <div class="box-border p-6">
+        <p class="font-sans text-gray-500 text-center">Created by Meaghan Campbell, Daniel Starkey & Taylor Gentry.</p>
+    </div>
+</footer>
     
 </html>
