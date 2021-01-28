@@ -1,0 +1,80 @@
+* {
+  font-family: Montserrat;
+}
+
+.title {
+  font-weight: bold;
+  font-style: italic;
+  color: #f15025;
+}
+.title span {
+  color: #191919;
+}
+
+.header {
+  background-image: url('../../images/crowd.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 32rem
+}
+.description {
+  text-shadow: 2px 2px 5px #191919;
+  color: #FFFFFF;
+  font-weight: lighter;
+}
+.search {
+  color: #f15025;
+  background-color: #CED0CE;;
+}
+.search:hover {
+  background-color: #E6E8E6;
+  color: #f38162;
+}
+
+/* player container styles (ul) */
+.player-container {
+  margin: 2px auto;
+  padding: 6px;
+  width: 80%;
+
+}
+/* player container styles (li element) */
+.song-background {
+  background-color: #E6E8E6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 10px;
+}
+/* song title & artist name */
+.song-details {
+  text-align: left;
+  padding: 10px;
+}
+/* trash and learn button container */
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* button styles */
+.learn, .trash {
+  box-shadow: 2px 2px 5px #191919;
+  background-color:#f15025;
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 0 15px;
+  margin: 0 10px;
+}
+
+.learn:hover, .trash:hover {
+  box-shadow: none;
+  background-color: #f38162;
+}
+
