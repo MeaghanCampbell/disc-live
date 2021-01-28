@@ -22,6 +22,9 @@ var submitSearch = function(event) {
     } else {
         alert('Please enter a valid artist name.')
     }
+
+    // fetch related artists with tastedive API
+    
 }
 
 // function to fetch spotify data here
