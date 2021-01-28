@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css" />
+    <title>PLAYlist</title>
+</head>
+
+<body class="bg-black overflow-scroll">
+    <header class="w-full bg-cover bg-center" style="height:6rem; background-image: url('./crowd.jpg');">
+        <h1 class="text-red-500 text-7xl font-semibold pt-2 pl-20">
+            <a href="./index.html">PLAYlist</a>
+        </h1>
+    </header>
+
+    <!-- Song & Tab Display -->
+    <section id="playDisplay">
+        <div class="container mb-2 flex mx-auto w-full items-center justify-center">
+            <ul class="p-6 w-10/12 space-y-4">
+                <li id="songChoice" class="bg-gray-200 flex flex-row flex-auto select-none items-center p-1 border-2 rounded-2xl border-red-500">
+                    <button class="text-center text-red-500 pl-2 pr-4 focus:outline-none focus:ring focus:border-blue-300">
+                        <i class="far fa-play-circle fa-2x"></i>
+                    </button>
+                    <div class="flex-auto pl-3 mr-16 font-medium">
+                        Song Title by Artist Name
+                    </div>
+                    <button class="w-24 text-center flex text-white text-bold rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
+                        Guitar
+                    </button>
+                    <button class="w-24 text-center flex text-white text-bold rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
+                        Bass
+                    </button>
+                    <button class="w-24 text-center flex text-white text-bold rounded-md bg-red-500 shadow-2xl justify-center items-center mr-2 p-2 focus:outline-none focus:ring focus:border-blue-300">
+                        Drums
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tab Card Body -->
+        <div class="container mb-10 flex mx-auto w-full items-center justify-center bg-gray-200 rounded-2xl">
+            <div class="p-6 w-10/12 h-screen space-y-4 text-black text-center text-7xl font-semibold">
+            Tabs Here
+            </div>
+        </div>
+    </section>
+</body>
+
+<!-- Footer -->
+<footer id="footer" class="bg-gray-100 h-20 bottom-0 w-full">
+    <div class="box-border p-6">
+        <p class="font-sans text-gray-500 text-center">Created by Meaghan Campbell, Daniel Starkey & Taylor Gentry.</p>
+    </div>
+</footer>
+    
+</html>
