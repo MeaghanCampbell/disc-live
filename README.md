@@ -2,7 +2,7 @@
 
 
 ## 💬Description
-A website for users to create and discover playlists from various streaming platforms through Openwhyd API while also being able to look up corresponding tabs/chords for guitar, bass, and drums through Songsterr API.
+A website for users to search for an artist they are interested in and see similar artists related to their search through the Last.fm API. The user will then be able to select multiple artists and view tour dates based on their selection through the Bandsintown API.
 
 
 ## 📓Table of Contents
@@ -16,10 +16,9 @@ A website for users to create and discover playlists from various streaming plat
 
 
 ## ⚡Purpose 
-* AS A musician
-* I WANT to find songs that I want to learn
-* SO THAT I can teach myself how to play them in an efficient manner
-<br></br>
+* AS A music fan
+* I WANT to find similar artists
+* SO THAT I can see tour dates relating to artists I select
 <br></br>
 * GIVEN ...
 * WHEN I ...
