@@ -1,0 +1,41 @@
+* {
+  font-family: Montserrat;
+}
+
+.title {
+  font-weight: bold;
+  font-style: italic;
+  color: #f15025;
+}
+.title span {
+  color: #191919;
+}
+
+.header {
+  background-image: url('../../images/crowd.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 32rem
+}
+.description {
+  text-shadow: 2px 2px 5px #191919;
+  color: #FFFFFF;
+}
+.search {
+  color: #f15025;
+  background-color: #CED0CE;;
+}
+.search:hover {
+  background-color: #E6E8E6;
+}
+.learn, .trash {
+  box-shadow: 2px 2px 5px #191919;
+  background-color:#f15025
+
+}
+
+.song-choice {
+  background-color: #E6E8E6;
+}
