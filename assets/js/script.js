@@ -23,8 +23,19 @@ var submitSearch = function(event) {
         alert('Please enter a valid artist name.')
     }
 
-    // fetch related artists with tastedive API
-    
+    // fetch related artists with tastedive API 
+    fetch(
+        'https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q='
+        + artistName
+      )
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(response) {
+        console.log(response);
+       
+  })
+  
 }
 
 // function to fetch spotify data here
