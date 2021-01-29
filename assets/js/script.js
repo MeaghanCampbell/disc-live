@@ -22,26 +22,26 @@ var submitSearch = function(event) {
     } else {
         alert('Please enter a valid artist name.')
     }
-  // fetch related artists with tastedive API 
-    fetch(
-        'https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q='
-        + artistName 
-        + '&k=400870-concertf-X0IO40ZG'
-      )
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(response) {
-        console.log(response);
-       
-  })
+  
 
   
 }
 
 // function to display player
 var displaySongPlayer = function(artistName) {
+   // fetch related artists with tastedive API 
+   fetch(
+    'https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q='
+    + artistName 
+    + '&k=400870-concertf-X0IO40ZG'
+  )
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(response) {
+    console.log(response);
    
+})
 
     artistNameDisplay.textContent = artistName
 
@@ -57,7 +57,7 @@ var displaySongPlayer = function(artistName) {
     // create p element and give it value of songTitle (searched term)
     var artistNameEl = document.createElement('p')
     artistNameEl.classList.add('song-details')
-    artistNameEl.textContent = 'similar artist' // this will be data...[i] to loop through and display 5 similar artists
+    artistNameEl.textContent = similarName // this will be data...[i] to loop through and display 5 similar artists
     
     // create container for buttons
     var btnContainerEl = document.createElement('div')
