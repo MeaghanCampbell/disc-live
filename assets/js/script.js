@@ -7,11 +7,9 @@ var searchInputEl = document.querySelector('#search-input')
 // select player container
 var artistSectionEl = document.querySelector('#similar-artist-display')
 
-// select artist name display
-var artistNameDisplay = document.querySelector('#artist-name')
-
 var submitSearch = function(event) {
     event.preventDefault();
+    artistSectionEl.innerHTML = '';
     
     // get value from city name input
     var artistName = searchInputEl.value.trim();
@@ -42,7 +40,12 @@ var fetchTasteData = function(artistName) {
 // function to display player
 var displaySongPlayer = function(data) {
 
+    
+    var artistNameDisplay = document.createElement('h2')
+    artistNameDisplay.classList.add('searched-artist')
+    artistNameDisplay.textContent = ''
     artistNameDisplay.textContent = data.Similar.Info[0].Name
+    artistSectionEl.appendChild(artistNameDisplay)
 
     for (var i = 0; i < 5; i++) {
     // create player container (ul)
