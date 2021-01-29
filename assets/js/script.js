@@ -46,11 +46,12 @@ var displaySongPlayer = function(data) {
     artistNameDisplay.textContent = ''
     artistNameDisplay.textContent = data.Similar.Info[0].Name
 
-    for (var i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
 
     // create song background (li)
     var artistBackgroundEl = document.createElement('li')
     artistBackgroundEl.className = 'artist-background'
+    artistBackgroundEl.setAttribute('id', 'container-' + i)
 
     // create p element and give it value of songTitle (searched term)
     var artistNameEl = document.createElement('p')
@@ -72,7 +73,10 @@ var displaySongPlayer = function(data) {
     trashBtnEl.classList.add('far')
     trashBtnEl.classList.add('fa-trash-alt')
     // id for trash button so we can target to remove item
-    trashBtnEl.setAttribute('id', 'button ' + i)
+    trashBtnEl.setAttribute('id', 'button-' + i)
+    trashBtnEl.addEventListener('click', function(e) {
+      removeArtist(e, i)
+    })
 
     // append elements to page
     artistContainerEl.appendChild(artistBackgroundEl)
@@ -85,11 +89,15 @@ var displaySongPlayer = function(data) {
 
 }
 
-var removeArtist = function(event) {
+var removeArtist = function(event, i) {
 
-  if (event.target.id) {
-    artistContainerEl.removeChild(artistContainerEl.childNodes[0])
-  }
+event.stopPropagation()
+var element = document.getElementById('container-' + i)
+var button = document.getElementById('button-' + i)
+
+if (event.target === button) {
+  element.remove()
+}
 
 }
 
