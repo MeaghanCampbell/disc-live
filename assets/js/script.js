@@ -17,19 +17,32 @@ var submitSearch = function(event) {
     var artistName = searchInputEl.value.trim();
 
     if (artistName) {
-        displaySongPlayer(artistName);
+        fetchTasteData(artistName);
         searchInputEl.value = "";
     } else {
         alert('Please enter a valid artist name.')
-    }
+    }  
 }
 
-// function to fetch spotify data here
+var fetchTasteData = function(artistName) {
+  fetch(
+    'https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q='
+    + artistName 
+    + '&k=400870-concertf-X0IO40ZG'
+  )
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    displaySongPlayer(data)
+   
+  })
+}
 
 // function to display player
-var displaySongPlayer = function(artistName) {
+var displaySongPlayer = function(data) {
 
-    artistNameDisplay.textContent = artistName
+    artistNameDisplay.textContent = data.Similar.Info[0].Name
 
     for (var i = 0; i < 5; i++) {
     // create player container (ul)
@@ -43,8 +56,8 @@ var displaySongPlayer = function(artistName) {
     // create p element and give it value of songTitle (searched term)
     var artistNameEl = document.createElement('p')
     artistNameEl.classList.add('song-details')
-    artistNameEl.textContent = 'similar artist name' // this will be data...[i] to loop through and display 5 similar artists
-
+    artistNameEl.textContent = data.Similar.Results[i].Name // this will be data...[i] to loop through and display 5 similar artists
+    
     // create container for buttons
     var btnContainerEl = document.createElement('div')
     btnContainerEl.classList.add('button-container')
@@ -60,7 +73,7 @@ var displaySongPlayer = function(artistName) {
     trashBtnEl.classList.add('far')
     trashBtnEl.classList.add('fa-trash-alt')
     // id for trash button so we can target to remove item
-    trashBtnEl.setAttribute('id', 'trash-btn')
+    trashBtnEl.setAttribute('id', 'button ' + i)
 
     // append elements to page
     artistSectionEl.appendChild(artistContainerEl)
@@ -72,9 +85,20 @@ var displaySongPlayer = function(artistName) {
 
     }
 
+    document.getElementById('button 0').addEventListener('click', removeArtist)
+    document.getElementById('button 1').addEventListener('click', removeArtist)
+    document.getElementById('button 2').addEventListener('click', removeArtist)
+    document.getElementById('button 3').addEventListener('click', removeArtist)
+    document.getElementById('button 4').addEventListener('click', removeArtist)
 }
+
+var removeArtist = function(event) {
+    console.log(event.target)
+}
+
 
 
 // listen for search button click
 searchBtnEl.addEventListener('click', submitSearch);
+
 
