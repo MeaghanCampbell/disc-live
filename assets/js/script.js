@@ -19,6 +19,7 @@ var submitSearch = function(event) {
     if (artistName) {
         fetchTasteData(artistName);
         searchInputEl.value = "";
+        artistSectionEl.value = '';
     } else {
         alert('Please enter a valid artist name.')
     }  
