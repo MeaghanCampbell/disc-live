@@ -57,7 +57,7 @@ var displaySongPlayer = function(artistName) {
     // create p element and give it value of songTitle (searched term)
     var artistNameEl = document.createElement('p')
     artistNameEl.classList.add('song-details')
-    artistNameEl.textContent = similarName // this will be data...[i] to loop through and display 5 similar artists
+    artistNameEl.textContent = 'similar artist' // this will be data...[i] to loop through and display 5 similar artists
     
     // create container for buttons
     var btnContainerEl = document.createElement('div')
