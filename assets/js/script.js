@@ -22,8 +22,7 @@ var submitSearch = function(event) {
     } else {
         alert('Please enter a valid artist name.')
     }
-
-    // fetch related artists with tastedive API 
+  // fetch related artists with tastedive API 
     fetch(
         'https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q='
         + artistName
@@ -35,13 +34,13 @@ var submitSearch = function(event) {
         console.log(response);
        
   })
+
   
 }
 
-// function to fetch spotify data here
-
 // function to display player
 var displaySongPlayer = function(artistName) {
+   
 
     artistNameDisplay.textContent = artistName
 
@@ -57,8 +56,8 @@ var displaySongPlayer = function(artistName) {
     // create p element and give it value of songTitle (searched term)
     var artistNameEl = document.createElement('p')
     artistNameEl.classList.add('song-details')
-    artistNameEl.textContent = 'similar artist name' // this will be data...[i] to loop through and display 5 similar artists
-
+    artistNameEl.textContent = 'similar artist' // this will be data...[i] to loop through and display 5 similar artists
+    
     // create container for buttons
     var btnContainerEl = document.createElement('div')
     btnContainerEl.classList.add('button-container')
