@@ -24,7 +24,7 @@ var submitSearch = function(event) {
     }
 }
 
-// function to fetch spotify data here
+// function to fetch similar artist data here
 
 // function to display player
 var displaySongPlayer = function(artistName) {
@@ -60,7 +60,7 @@ var displaySongPlayer = function(artistName) {
     trashBtnEl.classList.add('far')
     trashBtnEl.classList.add('fa-trash-alt')
     // id for trash button so we can target to remove item
-    trashBtnEl.setAttribute('id', 'trash-btn')
+    trashBtnEl.setAttribute('id', 'button ' + i)
 
     // append elements to page
     artistSectionEl.appendChild(artistContainerEl)
@@ -72,9 +72,20 @@ var displaySongPlayer = function(artistName) {
 
     }
 
+    document.getElementById('button 0').addEventListener('click', removeArtist)
+    document.getElementById('button 1').addEventListener('click', removeArtist)
+    document.getElementById('button 2').addEventListener('click', removeArtist)
+    document.getElementById('button 3').addEventListener('click', removeArtist)
+    document.getElementById('button 4').addEventListener('click', removeArtist)
 }
+
+var removeArtist = function(event) {
+    console.log(event.target)
+}
+
 
 
 // listen for search button click
 searchBtnEl.addEventListener('click', submitSearch);
+
 
