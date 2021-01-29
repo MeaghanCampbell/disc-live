@@ -4,12 +4,14 @@ var searchBtnEl = document.querySelector('#search-btn')
 // select search input
 var searchInputEl = document.querySelector('#search-input')
 
-// select player container
-var artistSectionEl = document.querySelector('#similar-artist-display')
+// select artist container
+var artistContainerEl = document.querySelector('#similar-artist-container')
+
+
 
 var submitSearch = function(event) {
     event.preventDefault();
-    artistSectionEl.innerHTML = '';
+    artistContainerEl.innerHTML = '';
     
     // get value from city name input
     var artistName = searchInputEl.value.trim();
@@ -40,17 +42,11 @@ var fetchTasteData = function(artistName) {
 // function to display player
 var displaySongPlayer = function(data) {
 
-    
-    var artistNameDisplay = document.createElement('h2')
-    artistNameDisplay.classList.add('searched-artist')
+    var artistNameDisplay = document.querySelector('#searched-artist')
     artistNameDisplay.textContent = ''
     artistNameDisplay.textContent = data.Similar.Info[0].Name
-    artistSectionEl.appendChild(artistNameDisplay)
 
     for (var i = 0; i < 5; i++) {
-    // create player container (ul)
-    var artistContainerEl = document.createElement('ul')
-    artistContainerEl.classList.add('artist-container')
 
     // create song background (li)
     var artistBackgroundEl = document.createElement('li')
@@ -59,8 +55,8 @@ var displaySongPlayer = function(data) {
     // create p element and give it value of songTitle (searched term)
     var artistNameEl = document.createElement('p')
     artistNameEl.classList.add('song-details')
-    artistNameEl.textContent = data.Similar.Results[i].Name // this will be data...[i] to loop through and display 5 similar artists
-    
+    artistNameEl.textContent = data.Similar.Results[i].Name 
+
     // create container for buttons
     var btnContainerEl = document.createElement('div')
     btnContainerEl.classList.add('button-container')
@@ -79,7 +75,6 @@ var displaySongPlayer = function(data) {
     trashBtnEl.setAttribute('id', 'button ' + i)
 
     // append elements to page
-    artistSectionEl.appendChild(artistContainerEl)
     artistContainerEl.appendChild(artistBackgroundEl)
     artistBackgroundEl.appendChild(artistNameEl)
     artistBackgroundEl.appendChild(btnContainerEl)
@@ -88,20 +83,23 @@ var displaySongPlayer = function(data) {
 
     }
 
-    document.getElementById('button 0').addEventListener('click', removeArtist)
-    document.getElementById('button 1').addEventListener('click', removeArtist)
-    document.getElementById('button 2').addEventListener('click', removeArtist)
-    document.getElementById('button 3').addEventListener('click', removeArtist)
-    document.getElementById('button 4').addEventListener('click', removeArtist)
 }
 
 var removeArtist = function(event) {
-    console.log(event.target)
+
+  if (event.target.id) {
+    artistContainerEl.removeChild(artistContainerEl.childNodes[0])
+  }
+
 }
 
 
 
 // listen for search button click
 searchBtnEl.addEventListener('click', submitSearch);
+
+// listen for trash button click
+artistContainerEl.addEventListener('click', removeArtist)
+
 
 
