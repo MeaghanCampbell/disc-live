@@ -11,6 +11,7 @@ var submitFindShows = function(event) {
 
     if (artistConcerts) {
         fetchBandsData(artistConcerts);
+        artistNameEl.value = "";
     } 
 }
 
@@ -21,8 +22,8 @@ var fetchBandsData = function(artistConcerts) {
         + '}}events?app_id='
         + 'e6da6370c9375949d1ebfe0713ff02c8'
     )
-    .then(function(repsonse) {
-        return Response.json();
+    .then(function(response) {
+        return response.json();
     })
     .then(function(data) {
         displayConcertDates(data)
@@ -32,6 +33,36 @@ var fetchBandsData = function(artistConcerts) {
 // function to display concert dates
 var displayConcertDates = function(data) {
 
+    var similarArtistName = document.querySelector('#similar-artist')
+    similarArtistName.textContent=''
+
+    for (let i = 0; i < 5; i++) {
+
+    // create concert background (li)
+    var concertBackgroundEl = document.createElement('li')
+    concertBackgroundEl.className = 'concert-background'
+    concertBackgroundEl.setAttribute('id', 'container-' + i)
+
+    // create p element and give it value of similar artist selected
+    var selectedArtistEl = document.createElement('p')
+    selectedArtistEl.classList.add('concert-details')
+    selectedArtistEl.textContent = data.
+
+    // create container for button
+    var infoBtnConEl = document.createElement('div')
+    infoBtnConEl.classList.add('infoBtn-container')
+
+    // create see more info btn
+    var infoBtnEl = document.createElement('button')
+    infoBtnEl.classList.add('info')
+    infoBtnEl.textContent = 'See more info & get tickets'
+
+    // append elements to page
+    concertSectionEl.appendChild(concertBackgroundEl)
+    concertBackgroundEl.appendChild(selectedArtistEl)
+    concertBackgroundEl.appendChild(infoBtnConEl)
+    infoBtnConEl.appendChild(infoBtnConEl)
+    }
 
 }
 
@@ -41,4 +72,11 @@ var displayConcertDates = function(data) {
 
 
 
-app id: e6da6370c9375949d1ebfe0713ff02c8
+
+
+
+
+
+
+
+

@@ -7,6 +7,12 @@ var searchInputEl = document.querySelector('#search-input')
 // select artist container
 var artistContainerEl = document.querySelector('#similar-artist-container')
 
+// find shows button
+var showsBtnEl = document.createElement('button')
+
+// select concert container
+var concertSectionEl = document.querySelector('#concert-display')
+
 
 
 var submitSearch = function(event) {
@@ -101,16 +107,73 @@ if (event.target === button) {
 
 }
 
+
+
+
+
+// SECOND PAGE
+var submitFindShows = function(event) {
+  event.preventDefault();
+  concertSectionEl.innerHTML = '';
+
+  // get value from artistNameEl
+  var artistConcerts = artistNameEl.value.trim();
+
+  if (artistConcerts) {
+      fetchBandsData(artistConcerts);
+      artistNameEl.value = "";
+  } 
+}
+
+var fetchBandsData = function(artistConcerts) {
+  fetch(
+      'https://rest.bandsintown.com/v4/artists/'
+      + artistConcerts
+      + '/events?app_id='
+      + 'e6da6370c9375949d1ebfe0713ff02c8'
+  )
+  .then(function(response) {
+      return response.json();
+  })
+  .then(function(data) {
+      displayConcertDates(data)
+  })
+}
+
+// function to display concert dates
+var displayConcertDates = function(data) {
+
+  var similarArtistName = document.querySelector('#similar-artist')
+  // similarArtistName.textContent=''
+  // similarArtistName.textContent = 
+
+  for (let i = 0; i < 5; i++) {
+
+  // create concert background (li)
+
+  // create p element and give it value of 
+  }
+
+}
+
+
+
+
+
 // listen for search button click
 searchBtnEl.addEventListener('click', submitSearch);
 
 // listen for find shows button click
-showsBtnEl.addEventListener('click', submitSearch);
-
-
+showsBtnEl.addEventListener('click', submitFindShows);
+console.log(submitFindShows);
 
 // listen for trash button click
 artistContainerEl.addEventListener('click', removeArtist)
+
+
+
+
+
 
 
 
