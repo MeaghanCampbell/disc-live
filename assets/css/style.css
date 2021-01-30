@@ -32,7 +32,7 @@
   color: #f38162;
 }
 
-.searched-artist {
+.artist {
   color: #E6E8E6;
   font-weight: normal;
   padding: 20px;
@@ -56,6 +56,7 @@
   align-items: center;
   border-radius: 5px;
   padding: 10px;
+  margin: 10px;
 }
 /* trash and learn button container */
 .button-container {
