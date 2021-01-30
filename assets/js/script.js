@@ -67,7 +67,6 @@ var displaySongPlayer = function(data) {
     // create find shows button
     var showsBtnEl = document.createElement('button')
     showsBtnEl.classList.add('shows')
-    showsBtnEl.setAttribute('id', 'find-shows');
     showsBtnEl.textContent = 'Find Shows'
 
     // create trash button and icon
@@ -112,10 +111,10 @@ searchBtnEl.addEventListener('click', submitSearch);
 artistContainerEl.addEventListener('click', removeArtist)
 
 // listen for find shows button click
-showsBtnEl.addEventListener('click', submitFindShows);
-document.getElementById('find-shows').onclick = function () {
-  location.href = "./playPage.html"
-};
+ showsBtnEl.addEventListener('click', findShowsFunction());
+  function findShowsFunction() {
+    window.location.replace("./playPage.html")
+  };
 
 
 
