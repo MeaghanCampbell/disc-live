@@ -17,9 +17,9 @@ var submitFindShows = function(event) {
 
 var fetchBandsData = function(artistConcerts) {
     fetch(
-        'https://rest.bandsintown.com/v4/artists/{{'
+        'https://rest.bandsintown.com/v4/artists/'
         + artistConcerts
-        + '}}events?app_id='
+        + '/events?app_id='
         + 'e6da6370c9375949d1ebfe0713ff02c8'
     )
     .then(function(response) {
@@ -46,7 +46,7 @@ var displayConcertDates = function(data) {
     // create p element and give it value of similar artist selected
     var selectedArtistEl = document.createElement('p')
     selectedArtistEl.classList.add('concert-details')
-    selectedArtistEl.textContent = data.
+    selectedArtistEl.textContent = data.//idk
 
     // create container for button
     var infoBtnConEl = document.createElement('div')
@@ -66,6 +66,8 @@ var displayConcertDates = function(data) {
 
 }
 
+// listen for info button click
+infoBtnEl.addEventListener('click', );
 
 
 
