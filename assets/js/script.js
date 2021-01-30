@@ -113,6 +113,9 @@ artistContainerEl.addEventListener('click', removeArtist)
 
 // listen for find shows button click
 showsBtnEl.addEventListener('click', submitFindShows);
+document.getElementById('find-shows').onclick = function () {
+  location.href = "./playPage.html"
+};
 
 
 
