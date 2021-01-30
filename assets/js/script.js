@@ -11,7 +11,7 @@ var submitSearch = function(event) {
     event.preventDefault();
     artistSectionEl.innerHTML = '';
     
-    // get value from city name input
+    // get value from artist name input
     var artistName = searchInputEl.value.trim();
 
     if (artistName) {
@@ -37,7 +37,7 @@ var fetchTasteData = function(artistName) {
   })
 }
 
-// function to display player
+// function to display artist
 var displaySongPlayer = function(data) {
 
     
@@ -48,11 +48,11 @@ var displaySongPlayer = function(data) {
     artistSectionEl.appendChild(artistNameDisplay)
 
     for (var i = 0; i < 5; i++) {
-    // create player container (ul)
+    // create artist container (ul)
     var artistContainerEl = document.createElement('ul')
     artistContainerEl.classList.add('artist-container')
 
-    // create song background (li)
+    // create artist background (li)
     var artistBackgroundEl = document.createElement('li')
     artistBackgroundEl.className = 'artist-background'
 
@@ -65,7 +65,7 @@ var displaySongPlayer = function(data) {
     var btnContainerEl = document.createElement('div')
     btnContainerEl.classList.add('button-container')
 
-    // create learn button
+    // create find shows button
     var showsBtnEl = document.createElement('button')
     showsBtnEl.classList.add('shows')
     showsBtnEl.textContent = 'Find Shows'
@@ -99,9 +99,10 @@ var removeArtist = function(event) {
     console.log(event.target)
 }
 
-
-
 // listen for search button click
 searchBtnEl.addEventListener('click', submitSearch);
+showsBtnEl.addEventListener('click', submitSearch);
+
+
 
 
