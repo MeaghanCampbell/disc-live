@@ -43,10 +43,19 @@ var displayConcertDates = function(data) {
     concertBackgroundEl.className = 'concert-background'
     concertBackgroundEl.setAttribute('id', 'container-' + i)
 
-    // create p element and give it value of similar artist selected
-    var selectedArtistEl = document.createElement('p')
-    selectedArtistEl.classList.add('concert-details')
-    selectedArtistEl.textContent = data.//idk
+    // create container for concert info
+    var concertConatinerEl = document.createElement('div')
+    concertConatinerEl.classList.add('concert-container')
+
+    // create p element and give it value of city
+    var concertCityEl = document.createElement('p')
+    concertCityEl.classList.add('city-details')
+    concertCityEl.textContent = //NEED HELP WITH ENDPOINT 
+
+    // create p element and give it a value of date
+    var concertDateEl = document.createElement('p')
+    concertDateEl.classList.add('date-details')
+    concertDateEl.textContent = //NEED HELP WITH ENDPOINT
 
     // create container for button
     var infoBtnConEl = document.createElement('div')
@@ -59,8 +68,10 @@ var displayConcertDates = function(data) {
 
     // append elements to page
     concertSectionEl.appendChild(concertBackgroundEl)
-    concertBackgroundEl.appendChild(selectedArtistEl)
+    concertBackgroundEl.appendChild(concertContainerEl)
     concertBackgroundEl.appendChild(infoBtnConEl)
+    concertConatinerEl.appendChild(concertCityEl)
+    concertConatinerEl.appendChild(concertDateEl)
     infoBtnConEl.appendChild(infoBtnConEl)
     }
 

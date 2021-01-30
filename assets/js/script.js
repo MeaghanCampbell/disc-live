@@ -111,10 +111,10 @@ searchBtnEl.addEventListener('click', submitSearch);
 artistContainerEl.addEventListener('click', removeArtist)
 
 // listen for find shows button click
- showsBtnEl.addEventListener('click', findShowsFunction());
-  function findShowsFunction() {
-    window.location.replace("./playPage.html")
-  };
+//  showsBtnEl.addEventListener('click', findShowsFunction());
+//   function findShowsFunction() {
+//     window.location.replace("./playPage.html")
+//   };
 
 
 
