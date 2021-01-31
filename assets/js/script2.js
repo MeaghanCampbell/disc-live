@@ -15,7 +15,7 @@ var submitFindShows = function() {
 } 
 
 var fetchBandsData = function(artistName2) {
-    console.log(artistName2)
+    
     fetch(
         'https://rest.bandsintown.com/v4/artists/' + artistName2 + '/events?app_id=e6da6370c9375949d1ebfe0713ff02c8'
     )
@@ -23,7 +23,11 @@ var fetchBandsData = function(artistName2) {
         return response.json();
     })
     .then(function(data) {
-        displayConcertDates(data)
+        if (data = []) {
+            alert('artist has no upcoming shows')
+        } else {
+            displayConcertDates(data)
+        }
     })
 }
 
