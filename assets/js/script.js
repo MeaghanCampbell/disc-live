@@ -112,9 +112,9 @@ artistContainerEl.addEventListener('click', removeArtist)
 
 // listen for find shows button click
 //  showsBtnEl.addEventListener('click', findShowsFunction());
-//   function findShowsFunction() {
-//     window.location.replace("./playPage.html")
-//   };
+  // function findShowsFunction() {
+  //   window.location = "./playPage.html"
+  // };
 
 
 

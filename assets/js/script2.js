@@ -18,7 +18,7 @@ var submitFindShows = function(event) {
 var fetchBandsData = function(artistConcerts) {
     fetch(
         'https://rest.bandsintown.com/v4/artists/'
-        + artistConcerts
+        + 'grimes'
         + '/events?app_id='
         + 'e6da6370c9375949d1ebfe0713ff02c8'
     )
@@ -78,18 +78,6 @@ var displayConcertDates = function(data) {
 }
 
 // listen for info button click
-infoBtnEl.addEventListener('click', );
-
-
-
-
-
-
-
-
-
-
-
-
-
+infoBtnEl.addEventListener('click', //NEED END POINT 
+);
 
