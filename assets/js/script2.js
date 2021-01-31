@@ -2,22 +2,22 @@
 var concertSectionEl = document.querySelector('#concert-display')
 
 
-/* var submitFindShows = function(event) {
-    event.preventDefault();
-    concertSectionEl.innerHTML = '';
+var submitFindShows = function() {
 
-    // get value from artistNameEl
-    var artistConcerts = artistNameEl.value.trim();
+    var queryString = document.location.search
+    var artistName = queryString.split('=')[1];
+    var artistName2 = artistName.toLowerCase()
 
-    if (artistConcerts) {
-        fetchBandsData(artistConcerts);
-        artistNameEl.value = "";
-    } 
-} */ 
+    if (artistName2) {
+        fetchBandsData(artistName2)
+    }
 
-var fetchBandsData = function() {
+} 
+
+var fetchBandsData = function(artistName2) {
+    console.log(artistName2)
     fetch(
-        'https://rest.bandsintown.com/v4/artists/phoebebridgers/events?app_id=e6da6370c9375949d1ebfe0713ff02c8'
+        'https://rest.bandsintown.com/v4/artists/' + artistName2 + '/events?app_id=e6da6370c9375949d1ebfe0713ff02c8'
     )
     .then(function(response) {
         return response.json();
@@ -35,7 +35,7 @@ var displayConcertDates = function(data) {
     similarArtistName.textContent = data[0].artist.name + ' Upcoming Shows'
 
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < data.length; i++) {
 
     var concertBackgroundEl = document.createElement('li')
     concertBackgroundEl.className = 'artist-background'
@@ -59,7 +59,8 @@ var displayConcertDates = function(data) {
 
 }
 
-fetchBandsData();
+submitFindShows();
+
 
 // listen for info button click
 //infoBtnEl.addEventListener('click', );
