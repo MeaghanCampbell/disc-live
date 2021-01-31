@@ -63,17 +63,3 @@ fetchBandsData();
 
 // listen for info button click
 //infoBtnEl.addEventListener('click', );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
