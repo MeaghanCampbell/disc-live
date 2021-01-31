@@ -23,8 +23,8 @@ var fetchBandsData = function(artistName2) {
         return response.json();
     })
     .then(function(data) {
-        if (data = []) {
-            alert('artist has no upcoming shows')
+        if (data.length === 0) {
+            alert('Artist has no upcoming shows')
         } else {
             displayConcertDates(data)
         }
