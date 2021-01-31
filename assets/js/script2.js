@@ -2,7 +2,7 @@
 var concertSectionEl = document.querySelector('#concert-display')
 
 
-var submitFindShows = function(event) {
+/* var submitFindShows = function(event) {
     event.preventDefault();
     concertSectionEl.innerHTML = '';
 
@@ -13,14 +13,11 @@ var submitFindShows = function(event) {
         fetchBandsData(artistConcerts);
         artistNameEl.value = "";
     } 
-}
+} */ 
 
-var fetchBandsData = function(artistConcerts) {
+var fetchBandsData = function() {
     fetch(
-        'https://rest.bandsintown.com/v4/artists/'
-        + artistConcerts
-        + '/events?app_id='
-        + 'e6da6370c9375949d1ebfe0713ff02c8'
+        'https://rest.bandsintown.com/v4/artists/phoebebridgers/events?app_id=e6da6370c9375949d1ebfe0713ff02c8'
     )
     .then(function(response) {
         return response.json();
@@ -34,51 +31,38 @@ var fetchBandsData = function(artistConcerts) {
 var displayConcertDates = function(data) {
 
     var similarArtistName = document.querySelector('#similar-artist')
-    similarArtistName.textContent=''
+    similarArtistName.textContent = ''
+    similarArtistName.textContent = data[0].artist.name + ' Upcoming Shows'
+
 
     for (let i = 0; i < 5; i++) {
 
-    // create concert background (li)
     var concertBackgroundEl = document.createElement('li')
-    concertBackgroundEl.className = 'concert-background'
-    concertBackgroundEl.setAttribute('id', 'container-' + i)
+    concertBackgroundEl.className = 'artist-background'
 
-    // create container for concert info
-    var concertConatinerEl = document.createElement('div')
-    concertConatinerEl.classList.add('concert-container')
-
-    // create p element and give it value of city
     var concertCityEl = document.createElement('p')
-    concertCityEl.classList.add('city-details')
-    concertCityEl.textContent = //NEED HELP WITH ENDPOINT 
+    concertCityEl.classList.add('song-details')
+    concertCityEl.textContent = 'in ' + data[i].venue.city + ' on ' + data[i].datetime
 
-    // create p element and give it a value of date
-    var concertDateEl = document.createElement('p')
-    concertDateEl.classList.add('date-details')
-    concertDateEl.textContent = //NEED HELP WITH ENDPOINT
-
-    // create container for button
-    var infoBtnConEl = document.createElement('div')
-    infoBtnConEl.classList.add('infoBtn-container')
-
-    // create see more info btn
-    var infoBtnEl = document.createElement('button')
-    infoBtnEl.classList.add('info')
+    var infoBtnEl = document.createElement('a')
+    infoBtnEl.classList.add('shows')
     infoBtnEl.textContent = 'See more info & get tickets'
+    infoBtnEl.setAttribute("href", data[i].url);
+    infoBtnEl.setAttribute("target", "_blank");
+    console.log(data[i].url)
 
-    // append elements to page
     concertSectionEl.appendChild(concertBackgroundEl)
-    concertBackgroundEl.appendChild(concertContainerEl)
-    concertBackgroundEl.appendChild(infoBtnConEl)
-    concertConatinerEl.appendChild(concertCityEl)
-    concertConatinerEl.appendChild(concertDateEl)
-    infoBtnConEl.appendChild(infoBtnConEl)
+    concertBackgroundEl.appendChild(concertCityEl)
+    concertBackgroundEl.appendChild(infoBtnEl)
+    
     }
 
 }
 
+fetchBandsData();
+
 // listen for info button click
-infoBtnEl.addEventListener('click', );
+//infoBtnEl.addEventListener('click', );
 
 
 
