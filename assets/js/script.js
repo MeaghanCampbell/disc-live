@@ -65,9 +65,13 @@ var displaySongPlayer = function(data) {
     btnContainerEl.classList.add('button-container')
 
     // create find shows button
-    var showsBtnEl = document.createElement('button')
+    var showsBtnEl = document.createElement('a')
     showsBtnEl.classList.add('shows')
-    showsBtnEl.textContent = 'Find Shows'
+    // showsBtnEl.textContent = 'Find Shows'
+    showsBtnEl.innerHTML = 'Find Shows';
+    showsBtnEl.setAttribute('title', 'Find Shows');
+    showsBtnEl.setAttribute('href', './playPage.html');
+    document.body.appendChild(showsBtnEl);
 
     // create trash button and icon
     var trashBtnEl = document.createElement('button')
