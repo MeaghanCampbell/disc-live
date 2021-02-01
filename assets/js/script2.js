@@ -43,14 +43,11 @@ var displayConcertDates = function(data) {
 
     var concertBackgroundEl = document.createElement('li')
     concertBackgroundEl.className = 'artist-background'
-
-    var d = new Date(datetime)
-    var day = dayjs(d)
-    console.log(day)
+    
 
     var concertCityEl = document.createElement('p')
     concertCityEl.classList.add('song-details')
-    concertCityEl.textContent = 'in ' + data[i].venue.city + ' on ' + data[i].day
+    concertCityEl.textContent = 'in ' + data[i].venue.city + ' on ' + data[i].datetime
     
 
     var infoBtnEl = document.createElement('a')
