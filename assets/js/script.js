@@ -36,7 +36,11 @@ var fetchTasteData = function(artistName) {
     return response.json();
   })
   .then(function(data) {
+    if (data.Similar.Info[0].Type === 'unknown') {
+      alert('Please enter a valid artist name.')
+  } else {
     displaySongPlayer(data)
+  }
    
   })
 }

@@ -1,24 +1,14 @@
-# PLAYlist
+# DISClive
 
 
 ## 💬Description
-A website for users to create and discover playlists from various streaming platforms through Openwhyd API while also being able to look up corresponding tabs/chords for guitar, bass, and drums through Songsterr API.
+DISClive is a live music discovery platform. Users can search artists they love, find artists that are similar, and see if any of those similar artists are playing shows near them. 
 
 
-## 📓Table of Contents
-* [Purpose](#purpose)
-* [Mock Up](#mock-up)
-* [Built With](#built_with)
-* [Installation](#installation)
-* [Website](#website)
-* [Contributing](#contributing)
-* [Questions](#questions)
-
-
-## ⚡Purpose 
-* AS A musician
-* I WANT to find songs that I want to learn
-* SO THAT I can teach myself how to play them in an efficient manner
+## Purpose 
+* AS A lover of live music
+* I WANT to see new artists in concert
+* SO THAT I can expand my music repitiore and find artists to follow that are similar to the ones I like
 <br></br>
 <br></br>
 * GIVEN ...
@@ -27,33 +17,27 @@ A website for users to create and discover playlists from various streaming plat
 
 
 ## 🎨Mock-Up
-![](mockup-1.png)
-<br>![](mockup-2.png)</br>
+<img width="421" alt="Screen Shot 2021-02-01 at 2 29 35 PM" src="https://user-images.githubusercontent.com/74511935/106514574-08c80700-649a-11eb-8080-aa3013cb1c7d.png">
+<img width="422" alt="Screen Shot 2021-02-01 at 2 29 40 PM" src="https://user-images.githubusercontent.com/74511935/106514589-0ebde800-649a-11eb-8962-0d7d5eebb6a7.png">
 
 
-## :pencil2:Built With
+## Built With
 * HTML
 * CSS
 * Javascript
 * Tailwind
-* JQuery
 * Google Fonts
 * Font Awesome
-
-
-## 🔌Installation
-The user should clone the repository from GitHub and open up the project in the browser from the index file.
+* TasteDive API
+* BandsInTown API
 
 
 ## 💻Website
-Please view deployed application at [PLAYlist](https://tpgent01.github.io/weather-dashboard/).
+https://meaghancampbell.github.io/disc-live/
 
 <br>![](website.gif)</br>
 
 
-## 📌Contributing
-Contributors should read the installation section.
+## 📌Contributors
+Meaghan Campbell, Taylor Gentry, Daniel Starkey
 
-
-## ❓Questions
-If you have any questions about this projects, please contact us directly at _______.com. 
