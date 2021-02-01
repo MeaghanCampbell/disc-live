@@ -47,7 +47,9 @@ var displayConcertDates = function(data) {
 
     var concertCityEl = document.createElement('p')
     concertCityEl.classList.add('song-details')
-    concertCityEl.textContent = 'in ' + data[i].venue.city + ' on ' + data[i].datetime + ' at ' + data[i].venue.name
+    concertCityEl.textContent = 'in ' + data[i].venue.city 
+    //+ ' on ' + data[i].datetime 
+    + ' at ' + data[i].venue.name
 
 
     var infoBtnEl = document.createElement('a')
