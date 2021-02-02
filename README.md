@@ -25,15 +25,18 @@ DISClive is a live music discovery platform. Users can search artists they love,
 * HTML
 * CSS
 * Javascript
-* Tailwind
+* Tailwind CSS
 * Google Fonts
 * Font Awesome
+* Favicon
+* Moment.js
 * TasteDive API
 * BandsInTown API
 
 
+
 ## 💻Website
-https://meaghancampbell.github.io/disc-live/
+Please view deployed application at [DISClive](https://meaghancampbell.github.io/disc-live/).
 
 <br>![](website.gif)</br>
 
