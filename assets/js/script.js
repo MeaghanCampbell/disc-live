@@ -136,7 +136,7 @@ artistContainerEl.addEventListener('click', removeArtist)
 
 
 
-// Run function for recent search
+// Run function for recent  search, load
 searchRecentFunction ()
 
 
