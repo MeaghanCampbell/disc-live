@@ -81,3 +81,17 @@
   box-shadow: none;
   background-color: #f38162;
 }
+
+/* MEDIA QUERY */
+@media only screen and (max-width: 575px) {
+  .artist-background {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .song-details {
+    display: flex;
+    align-content: center;
+    padding-left: 15px;
+  }
+}

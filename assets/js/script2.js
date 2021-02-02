@@ -70,10 +70,6 @@ var displayConcertDates = function(data) {
 submitFindShows();
 
 
-// listen for info button click
-//infoBtnEl.addEventListener('click', );
-
-
 
 
 
