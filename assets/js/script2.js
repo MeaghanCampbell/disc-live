@@ -44,20 +44,17 @@ var displayConcertDates = function(data) {
     var concertBackgroundEl = document.createElement('li')
     concertBackgroundEl.className = 'artist-background'
 
-
+    var concertMoment = moment(data[i].datetime).format('M/D/Y')
     var concertCityEl = document.createElement('p')
     concertCityEl.classList.add('song-details')
     concertCityEl.textContent = 'in ' + data[i].venue.city 
-    + ' on ' + data[i].datetime 
-    //+ ' at ' + data[i].venue.name
-
+    + ' on ' + concertMoment
 
     var infoBtnEl = document.createElement('a')
     infoBtnEl.classList.add('shows')
     infoBtnEl.textContent = 'See more info & get tickets'
     infoBtnEl.setAttribute("href", data[i].url);
     infoBtnEl.setAttribute("target", "_blank");
-    console.log(data[i].url)
 
     concertSectionEl.appendChild(concertBackgroundEl)
     concertBackgroundEl.appendChild(concertCityEl)
@@ -68,10 +65,6 @@ var displayConcertDates = function(data) {
 }
 
 submitFindShows();
-
-
-// listen for info button click
-//infoBtnEl.addEventListener('click', );
 
 
 
