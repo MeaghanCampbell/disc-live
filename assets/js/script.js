@@ -10,6 +10,19 @@ var artistContainerEl = document.querySelector('#similar-artist-container')
 // find shows button
 var showsBtnEl = document.createElement('button')
 
+//select recent searched artist
+var recentSearch = localStorage.getItem ("storedArtist")
+
+//function to run if there are recent searches
+
+var searchRecentFunction = function () {
+  if (recentSearch) {
+    artistName = localStorage.getItem ("storedArtist")
+    fetchTasteData(artistName);
+  
+}
+}
+
 
 var submitSearch = function(event) {
     event.preventDefault();
@@ -21,6 +34,9 @@ var submitSearch = function(event) {
     if (artistName) {
         fetchTasteData(artistName);
         searchInputEl.value = "";
+        
+        // store input to local storage
+        localStorage.setItem("storedArtist", artistName);
     } else {
         alert('Please enter a valid artist name.')
     }  
@@ -41,10 +57,12 @@ var fetchTasteData = function(artistName) {
       alert('Please enter a valid artist name.')
   } else {
     displaySongPlayer(data)
+   
   }
    
   })
 }
+
 
 // function to display artist
 var displaySongPlayer = function(data) {
@@ -116,17 +134,10 @@ searchBtnEl.addEventListener('click', submitSearch);
 // listen for trash button click
 artistContainerEl.addEventListener('click', removeArtist)
 
-// listen for find shows button click
-//  showsBtnEl.addEventListener('click', findShowsFunction());
-//   function findShowsFunction() {
-//     window.location.replace("./playPage.html")
-//   };
 
 
-
-
-
-
+// Run functio 
+searchRecentFunction ()
 
 
 
