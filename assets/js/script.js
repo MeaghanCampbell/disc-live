@@ -28,9 +28,10 @@ var submitSearch = function(event) {
 
 var fetchTasteData = function(artistName) {
   fetch(
-    'https://cors-anywhere.herokuapp.com/https://tastedive.com/api/similar?q='
+    'https://ee-cors.herokuapp.com/https://tastedive.com/api/similar?q='
     + artistName 
     + '&k=400870-concertf-X0IO40ZG'
+    
   )
   .then(function(response) {
     return response.json();
