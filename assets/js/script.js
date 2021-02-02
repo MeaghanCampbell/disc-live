@@ -26,6 +26,16 @@ var submitSearch = function(event) {
     }  
 }
 
+// search by enter btn
+var pressEnter = document.getElementById('search-input');
+pressEnter.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById('search-btn').click();
+  }
+});
+
+
 var fetchTasteData = function(artistName) {
   fetch(
     'https://ee-cors.herokuapp.com/https://tastedive.com/api/similar?q='
