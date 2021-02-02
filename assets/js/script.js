@@ -31,6 +31,7 @@ var fetchTasteData = function(artistName) {
     'https://ee-cors.herokuapp.com/https://tastedive.com/api/similar?q='
     + artistName 
     + '&k=400870-concertf-X0IO40ZG'
+    
   )
   .then(function(response) {
     return response.json();
