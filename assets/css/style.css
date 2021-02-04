@@ -91,6 +91,14 @@ body.modal-active {
   background-color: #f38162;
 }
 
+.modal-close {
+  background-color: #f15025;
+}
+
+.modal-close:hover {
+  background-color: #f38162;
+}
+
 /* MEDIA QUERY */
 @media only screen and (max-width: 575px) {
   .artist-background {
