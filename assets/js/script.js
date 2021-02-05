@@ -10,20 +10,12 @@ var artistContainerEl = document.querySelector('#similar-artist-container')
 // find shows button
 var showsBtnEl = document.createElement('button')
 
-//select recent searched artist
-var recentSearch = localStorage.getItem ("storedArtist")
-
-//function to run if there are recent searches
-
-var searchRecentFunction = function () {
-  if (recentSearch) {
-    artistName = localStorage.getItem ("storedArtist")
-    fetchTasteData(artistName);
-  
-}
-}
 
 
+
+
+
+// search function
 var submitSearch = function(event) {
     event.preventDefault();
     artistContainerEl.innerHTML = '';
@@ -35,12 +27,10 @@ var submitSearch = function(event) {
         fetchTasteData(artistName);
         searchInputEl.value = "";
         
-        // store input to local storage
-        localStorage.setItem("storedArtist", artistName);
-    } else {
-        alert('Please enter a valid artist name.')
-    }  
+      
+    } 
 }
+
 
 // search by enter btn
 var pressEnter = document.getElementById('search-input');
@@ -60,14 +50,55 @@ var fetchTasteData = function(artistName) {
     
   )
   .then(function(response) {
+    
     return response.json();
+    
   })
   .then(function(data) {
+    
     if (data.Similar.Info[0].Type === 'unknown') {
-      alert('Please enter a valid artist name.')
+
+      var openmodal = document.querySelectorAll('.modal-open')
+      for (var i = 0; i < openmodal.length; i++) {
+      openmodal[i].addEventListener('click', function(event){
+    	event.preventDefault()
+    	toggleModal()
+      })
+    }
+    
+    const overlay = document.querySelector('.modal-overlay')
+    overlay.addEventListener('click', toggleModal)
+
+    var closemodal = document.getElementById('close')
+    closemodal.addEventListener('click', toggleModal)
+    
+    document.onkeydown = function(evt) {
+      evt = evt || window.event
+      var isEscape = false
+      if ("key" in evt) {
+    	isEscape = (evt.key === "Escape" || evt.key === "Esc")
+      } else {
+    	isEscape = (evt.keyCode === 27)
+      }
+      if (isEscape && document.body.classList.contains('modal-active')) {
+    	toggleModal()
+      }
+    };
+    
+    
+    function toggleModal () {
+      const body = document.querySelector('body')
+      const modal = document.querySelector('.modal')
+      modal.classList.toggle('opacity-0')
+      modal.classList.toggle('pointer-events-none')
+      body.classList.toggle('modal-active')
+    }
   } else {
     displaySongPlayer(data)
-   
+
+    //Take searched Name and send it to storage function
+    var storeName = data.Similar.Info[0].Name
+    storeSearch(storeName)
   }
    
   })
@@ -136,7 +167,14 @@ if (event.target === button) {
 }
 
 }
-
+//storage searched names in array function
+var storeSearch = function (storeName) {
+  var searchedArtist = storeName;
+  var searchHistory = JSON.parse(localStorage.getItem ("savedArtist")) || [];
+  searchHistory.push(searchedArtist);
+  localStorage.setItem("savedArtist", JSON.stringify(searchHistory));
+  console.log(searchHistory);
+}
 
 // listen for search button click
 searchBtnEl.addEventListener('click', submitSearch);
@@ -146,8 +184,7 @@ artistContainerEl.addEventListener('click', removeArtist)
 
 
 
-// Run function for recent  search, load
-searchRecentFunction ()
+
 
 
 

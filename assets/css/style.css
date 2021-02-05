@@ -40,6 +40,15 @@
   font-size: 30px;
 }
 
+.modal {
+  transition: opacity 0.25s ease;
+}
+
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
+
 /* artist container styles (ul) */
 .artist-container {
   margin: 2px auto;
@@ -79,6 +88,14 @@
 
 .shows:hover, .trash:hover {
   box-shadow: none;
+  background-color: #f38162;
+}
+
+.modal-close {
+  background-color: #f15025;
+}
+
+.modal-close:hover {
   background-color: #f38162;
 }
 
