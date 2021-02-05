@@ -14,7 +14,6 @@ var showsBtnEl = document.createElement('button')
 
 
 
-
 // search function
 var submitSearch = function(event) {
     event.preventDefault();
