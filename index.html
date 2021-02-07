@@ -34,7 +34,7 @@
             <!-- Search Input -->
             <div id="searchBar">
                 <input id="search-input" class="form-control shadow appearance-none border rounded py-2 px-4 text-grey-darker focus:outline-none focus:ring focus:border-blue-300" id="enter-music" type="text" placeholder="Enter an artist" arial-label="search by genre">
-                <button id="search-btn" class="modal-open search font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-blue-300" type="button" id="search-btn">
+                <button id="search-btn" class="modal-open search font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-blue-300" type="button">
                     Search
                 </button>
 
@@ -63,11 +63,16 @@
                     </div>
                 </div>
             </div>
+            <div class='recent-btn-container flex justify-center'>
+                <button id='recent-searches' class='recent-btn font-medium py-2 px-4 mx-1 rounded focus:outline-none focus:ring focus:border-blue-300' type="button">
+                    View recent search
+                </button>
+            </div>
         </div>
     </header>
 
     <!-- Similar artist display -->
-    <section id="similar-artist-display">
+    <section id="similar-artist-display" class="py-10">
         <h2 id='searched-artist' class='artist'></h2>
         <ul id='similar-artist-container' class='artist-container'></ul>
     </section>

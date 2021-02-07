@@ -10,6 +10,20 @@ var artistContainerEl = document.querySelector('#similar-artist-container')
 // find shows button
 var showsBtnEl = document.createElement('button')
 
+// target recent searches button
+var recentSearchEl = document.querySelector('#recent-searches')
+
+//select recent searched artist
+var recentSearch = localStorage.getItem ("storedArtist")
+
+// function to run recent searches
+var searchRecentFunction = function () {
+  if (recentSearch) {
+    artistName = localStorage.getItem ("storedArtist")
+    fetchTasteData(artistName);
+  
+  }
+}
 
 // search function
 var submitSearch = function(event) {
@@ -22,7 +36,9 @@ var submitSearch = function(event) {
     if (artistName) {
         fetchTasteData(artistName);
         searchInputEl.value = "";
-        
+
+        // store input to local storage
+        localStorage.setItem("storedArtist", artistName);
       
     } 
 }
@@ -54,13 +70,15 @@ var fetchTasteData = function(artistName) {
     
     if (data.Similar.Info[0].Type === 'unknown') {
 
-      var openmodal = document.querySelectorAll('.modal-open')
+    /*  var openmodal = document.querySelectorAll('.modal-open')
       for (var i = 0; i < openmodal.length; i++) {
       openmodal[i].addEventListener('click', function(event){
     	event.preventDefault()
     	toggleModal()
       })
-    }
+    } */
+
+    toggleModal()
     
     const overlay = document.querySelector('.modal-overlay')
     overlay.addEventListener('click', toggleModal)
@@ -68,8 +86,7 @@ var fetchTasteData = function(artistName) {
     var closemodal = document.querySelectorAll('.modal-close')
     for (var i = 0; i < closemodal.length; i++) {
       closemodal[i].addEventListener('click', function(event){
-      event.preventDefault()
-      toggleModal()
+      window.location.reload()
       })
     }
     
@@ -97,9 +114,6 @@ var fetchTasteData = function(artistName) {
   } else {
     displaySongPlayer(data)
 
-    //Take searched Name and send it to storage function
-    var storeName = data.Similar.Info[0].Name
-    storeSearch(storeName)
   }
    
   })
@@ -168,20 +182,19 @@ if (event.target === button) {
 }
 
 }
-//storage searched names in array function
-var storeSearch = function (storeName) {
-  var searchedArtist = storeName;
-  var searchHistory = JSON.parse(localStorage.getItem ("savedArtist")) || [];
-  searchHistory.push(searchedArtist);
-  localStorage.setItem("savedArtist", JSON.stringify(searchHistory));
-  console.log(searchHistory);
-}
+
 
 // listen for search button click
 searchBtnEl.addEventListener('click', submitSearch);
 
 // listen for trash button click
 artistContainerEl.addEventListener('click', removeArtist)
+
+//listen for recent searches button click
+recentSearchEl.addEventListener('click', searchRecentFunction)
+
+
+
 
 
 
