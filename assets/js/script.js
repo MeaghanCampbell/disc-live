@@ -10,20 +10,22 @@ var artistContainerEl = document.querySelector('#similar-artist-container')
 // find shows button
 var showsBtnEl = document.createElement('button')
 
+// target recent searches button
+var recentSearchEl = document.querySelector('#recent-searches')
+
 //select recent searched artist
 var recentSearch = localStorage.getItem ("storedArtist")
 
-//function to run if there are recent searches
-
+// function to run recent searches
 var searchRecentFunction = function () {
   if (recentSearch) {
     artistName = localStorage.getItem ("storedArtist")
     fetchTasteData(artistName);
   
-}
+  }
 }
 
-
+// search function
 var submitSearch = function(event) {
     event.preventDefault();
     artistContainerEl.innerHTML = '';
@@ -34,13 +36,13 @@ var submitSearch = function(event) {
     if (artistName) {
         fetchTasteData(artistName);
         searchInputEl.value = "";
-        
+
         // store input to local storage
         localStorage.setItem("storedArtist", artistName);
-    } else {
-        alert('Please enter a valid artist name.')
-    }  
+      
+    } 
 }
+
 
 // search by enter btn
 var pressEnter = document.getElementById('search-input');
@@ -60,14 +62,58 @@ var fetchTasteData = function(artistName) {
     
   )
   .then(function(response) {
+    
     return response.json();
+    
   })
   .then(function(data) {
+    
     if (data.Similar.Info[0].Type === 'unknown') {
-      alert('Please enter a valid artist name.')
+
+    /*  var openmodal = document.querySelectorAll('.modal-open')
+      for (var i = 0; i < openmodal.length; i++) {
+      openmodal[i].addEventListener('click', function(event){
+    	event.preventDefault()
+    	toggleModal()
+      })
+    } */
+
+    toggleModal()
+    
+    const overlay = document.querySelector('.modal-overlay')
+    overlay.addEventListener('click', toggleModal)
+
+    var closemodal = document.querySelectorAll('.modal-close')
+    for (var i = 0; i < closemodal.length; i++) {
+      closemodal[i].addEventListener('click', function(event){
+      window.location.reload()
+      })
+    }
+    
+    document.onkeydown = function(evt) {
+      evt = evt || window.event
+      var isEscape = false
+      if ("key" in evt) {
+    	isEscape = (evt.key === "Escape" || evt.key === "Esc")
+      } else {
+    	isEscape = (evt.keyCode === 27)
+      }
+      if (isEscape && document.body.classList.contains('modal-active')) {
+    	toggleModal()
+      }
+    };
+    
+    
+    function toggleModal () {
+      const body = document.querySelector('body')
+      const modal = document.querySelector('.modal')
+      modal.classList.toggle('opacity-0')
+      modal.classList.toggle('pointer-events-none')
+      body.classList.toggle('modal-active')
+    }
   } else {
     displaySongPlayer(data)
-   
+
   }
    
   })
@@ -144,10 +190,15 @@ searchBtnEl.addEventListener('click', submitSearch);
 // listen for trash button click
 artistContainerEl.addEventListener('click', removeArtist)
 
+//listen for recent searches button click
+recentSearchEl.addEventListener('click', searchRecentFunction)
 
 
-// Run function for recent  search, load
-searchRecentFunction ()
+
+
+
+
+
 
 
 

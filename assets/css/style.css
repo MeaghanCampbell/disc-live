@@ -25,11 +25,21 @@
 }
 .search {
   color: #f15025;
-  background-color: #CED0CE;;
+  background-color: #CED0CE;
+}
+.recent-btn {
+  background-color: transparent;
+  border: 1px solid #f15025;
+  color: #f15025;
+}
+.recent-btn:hover {
+  color: #CED0CE;
+  background-color: #f15025;
+  border: none;
 }
 .search:hover {
-  background-color: #E6E8E6;
   color: #f38162;
+  background-color: white;
 }
 
 .artist {
@@ -38,6 +48,15 @@
   padding: 20px;
   text-align: center;
   font-size: 30px;
+}
+
+.modal {
+  transition: opacity 0.25s ease;
+}
+
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
 }
 
 /* artist container styles (ul) */
@@ -79,6 +98,14 @@
 
 .shows:hover, .trash:hover {
   box-shadow: none;
+  background-color: #f38162;
+}
+
+.modal-close {
+  background-color: #f15025;
+}
+
+.modal-close:hover {
   background-color: #f38162;
 }
 

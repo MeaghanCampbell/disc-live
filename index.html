@@ -34,15 +34,45 @@
             <!-- Search Input -->
             <div id="searchBar">
                 <input id="search-input" class="form-control shadow appearance-none border rounded py-2 px-4 text-grey-darker focus:outline-none focus:ring focus:border-blue-300" id="enter-music" type="text" placeholder="Enter an artist" arial-label="search by genre">
-                <button id="search-btn" class="search font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-blue-300" type="button" id="search-btn">
+                <button id="search-btn" class="modal-open search font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-blue-300" type="button">
                     Search
+                </button>
+
+                <!--Modal-->
+                <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+                    <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+                    
+                    <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+
+                    <div class="modal-content py-4 text-left px-6">
+                        <!--Title-->
+                        <div class="flex justify-between items-center pb-3">
+                        <p class="text-2xl font-bold">Error!</p>
+                        
+                        </div>
+
+                        <!--Body-->
+                        <p>Please enter a valid artist name.</p>
+
+                        <!--Footer-->
+                        <div class="flex justify-end pt-2">
+                        <button id="close" class="modal-close px-4 p-3 rounded-lg text-white">Close</button>
+                        </div>
+                        
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class='recent-btn-container flex justify-center'>
+                <button id='recent-searches' class='recent-btn font-medium py-2 px-4 mx-1 rounded focus:outline-none focus:ring focus:border-blue-300' type="button">
+                    View recent search
                 </button>
             </div>
         </div>
     </header>
 
     <!-- Similar artist display -->
-    <section id="similar-artist-display">
+    <section id="similar-artist-display" class="py-10">
         <h2 id='searched-artist' class='artist'></h2>
         <ul id='similar-artist-container' class='artist-container'></ul>
     </section>
