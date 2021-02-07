@@ -11,9 +11,6 @@ var artistContainerEl = document.querySelector('#similar-artist-container')
 var showsBtnEl = document.createElement('button')
 
 
-
-
-
 // search function
 var submitSearch = function(event) {
     event.preventDefault();
@@ -68,8 +65,13 @@ var fetchTasteData = function(artistName) {
     const overlay = document.querySelector('.modal-overlay')
     overlay.addEventListener('click', toggleModal)
 
-    var closemodal = document.getElementById('close')
-    closemodal.addEventListener('click', toggleModal)
+    var closemodal = document.querySelectorAll('.modal-close')
+    for (var i = 0; i < closemodal.length; i++) {
+      closemodal[i].addEventListener('click', function(event){
+      event.preventDefault()
+      toggleModal()
+      })
+    }
     
     document.onkeydown = function(evt) {
       evt = evt || window.event
